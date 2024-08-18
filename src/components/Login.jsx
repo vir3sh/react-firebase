@@ -1,28 +1,62 @@
-import React from 'react'
-import './login.css'
+import React from 'react';
+import './login.css'; // Import the CSS file
+import { useState ,useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
+import { signInWithEmailAndPassword ,onAuthStateChanged} from 'firebase/auth';
+import { auth } from '../firebase'; // Import the auth object from firebase.js
 
 function Login() {
+  const[email, setEmail] =useState();
+  const[password,setPassword]=useState();
+  const navigate=useNavigate();
+
+  const handleLogin = async (e) => {
+    e.preventDefault(); // Prevent default form submission
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password); // Use the imported auth object
+      // Navigate to home page or show a success message
+    } catch (error) {
+      console.error("Error Logging in:", error.message);
+    }
+  };
+
+
+
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        navigate("/"); // Redirect to home if the user is logged in
+      }
+    });
+
+    return () => unsubscribe(); // Cleanup the listener on component unmount
+  }, [navigate]);
+
+
+
+
+
   return (
-    <div style={{ maxWidth: '400px', margin: '0 auto', padding: '20px', border: '1px solid #ccc', borderRadius: '8px', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)' }}>
+    <div className="container">
       <h2>Login</h2>
       <form>
-        <div style={{ marginBottom: '15px' }}>
-          <label htmlFor="email" style={{ display: 'block', marginBottom: '5px' }}>Email</label>
-          <input type="email" id="email" name="email" style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }} required />
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input type="email" id="email" name="email" required  value={email} onChange={(e) =>{setEmail(e.target.value)}} />
         </div>
-        <div style={{ marginBottom: '15px' }}>
-          <label htmlFor="password" style={{ display: 'block', marginBottom: '5px' }}>Password</label>
-          <input type="password" id="password" name="password" style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }} required />
+        <div className="form-group">
+          <label htmlFor="password">Password</label>
+          <input type="password" id="password" name="password" required value={password} onChange={(e)=>{setPassword(e.target.value)}} />
         </div>
-        <button type="submit" style={{ width: '100%', padding: '10px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>
-          Login
-        </button>
+        <button type="submit" onClick={handleLogin}>Login</button>
       </form>
-      <p style={{ marginTop: '15px', textAlign: 'center' }}>
-        Don't have an account? <a href="./Signup" style={{ color: '#007bff', textDecoration: 'none' }}>Sign up</a>
+      <p>
+        Don't have an account? <a href="./Signup">Sign up</a>
       </p>
     </div>
   )
 }
 
-export default Login
+export default Login;
