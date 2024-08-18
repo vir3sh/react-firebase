@@ -1,7 +1,7 @@
-import logo from './logo.svg';
-import Navbar from './components/Navbar';
+
 import Login from './components/Login';
 import Signup from './components/Signup';
+import User from './components/User';
 import {BrowserRouter,Route,Routes} from 'react-router-dom';
 
 
@@ -15,7 +15,7 @@ function App() {
    <Routes>
     <Route exact path='/signup' element={<Signup/>}/>
     <Route exact path='/login' element={<Login/>}/>
-    <Route exact path='/' element={<user/>}/>
+    <Route exact path='/' element={<User/>}/>
    </Routes>
    </BrowserRouter>
 
