@@ -1,0 +1,71 @@
+/* darkmode.css */
+
+body {
+    background-color: #121212; /* Dark background for the body */
+    color: #ffffff; /* Light text color */
+}
+
+nav {
+    background-color: #1e1e1e; /* Dark background for the navigation */
+    padding: 15px; /* Padding around the nav */
+    display: flex; /* Flexbox to align items */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+}
+
+.items ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    display: flex; /* Horizontal list */
+}
+
+.items li {
+    margin-right: 20px; /* Space between list items */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+
+
+.darkModebtn button {
+    background-color: #bb86fc; /* Button color */
+    color: #ffffff; /* Button text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Button padding */
+    cursor: pointer; /* Change cursor to pointer */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.darkModebtn button:hover {
+    background-color: #3700b3; /* Darker color on hover */
+}
+/* darkmode.css */
+
+/* Light Mode Styles */
+.light-nav {
+    background-color: #ffffff; /* Light background for nav */
+    color: #000000; /* Dark text color */
+}
+
+/* Dark Mode Styles */
+.dark-nav {
+    background-color: #121212; /* Dark background for nav */
+    color: #ffffff; /* Light text color */
+}
+
+.items ul {
+    list-style-type: none; /* Remove bullet points from list */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Flexbox for horizontal layout */
+}
+
+.items li {
+    margin: 0 15px; /* Spacing between menu items */
+}
+
+.darkModebtn {
+    margin-left: auto; /* Push button to the right */
+}

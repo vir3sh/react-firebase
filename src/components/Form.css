@@ -1,0 +1,71 @@
+.container {
+    max-width: 1350px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.container .left-section, 
+.container .right-section {
+    flex: 1; /* Each section takes up 50% of the container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .left-section form{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin:  auto;
+    width: 70%;
+    max-width: 675px;
+    
+}
+
+/* .container .left-section{
+    background-color: rgb(161, 172, 164);
+    border-radius: 20px;
+} */
+
+.container .left-section form input{
+    border-radius: 7px;
+    border: 0.25px solid white;
+    padding: 7px;
+}
+
+.container .left-section form button{
+    border-radius: 7px;
+    border: 0.25px;
+    padding: 7px;
+    background-color: #27debf;
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+.container .left-section form label{
+    font-size: 20px;
+    position: relative;
+    width: fit-content;
+    padding: 2px;
+}
+
+img{
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+}
+
+@media(max-width: 501px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .container .left-section{
+
+        margin-bottom: 30px;
+    }
+}

@@ -1,0 +1,19 @@
+const products=[
+        {
+            id:1,
+            name:'viresh'
+        },    
+        {
+            id:2,
+            name:'nitesh'
+        },
+        {
+            id:3,
+            name:'sahil'
+        },
+        {
+            id:4,
+            name:'sures'
+        },
+
+    ]

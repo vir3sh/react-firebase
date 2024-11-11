@@ -1,0 +1,17 @@
+.Text{
+    max-width: 1150px;
+    width: 100%;
+    margin:  0 auto;
+    text-align: justify;
+    padding: 10px;
+}
+.Text h2{
+    font-weight: 600;
+    font-size: 48px;
+    color: white;
+}
+.Text p{
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+}

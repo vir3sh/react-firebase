@@ -1,25 +1,23 @@
-
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Form from './components/Form';
+import Text from './components/Text';
 import Login from './components/Login';
-import Signup from './components/Signup';
-import User from './components/User';
-import {BrowserRouter,Route,Routes} from 'react-router-dom';
-
 
 function App() {
   return (
-    // <>
-    //  <Navbar/>
-    //  <Login/>
-    // </>
-   <BrowserRouter>
-   <Routes>
-    <Route exact path='/signup' element={<Signup/>}/>
-    <Route exact path='/login' element={<Login/>}/>
-    <Route exact path='/' element={<User/>}/>
-   </Routes>
-   </BrowserRouter>
-
-
+    <BrowserRouter>
+      <Navbar />
+      <Text />
+      <Routes>
+        {/* Route for the signup page */}
+        <Route path="/" element={<Form />} />
+        
+        {/* Route for the login page */}
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
